@@ -1,0 +1,18 @@
+﻿@using MVCMonsoon9PmBatch.Models
+@model List<EmployeeModel>
+@{
+    ViewBag.Title = "GetAllEmployeeByModel";
+}
+
+<h2>GetAllEmployeeByModel</h2>
+
+@foreach (var item in Model)
+{
+    @item.EmpId<br />
+    @item.EmpName<br />
+    @item.EmpSalary<br /><br />
+
+}
+
+@ViewBag.dept.DeptId
+@ViewBag.dept.DeptName

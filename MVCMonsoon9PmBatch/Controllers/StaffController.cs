@@ -21,7 +21,7 @@ namespace MVCMonsoon9PmBatch.Controllers
 
         public ActionResult GetMyView()
         {
-            return View();
+            return View();//testing
 
         }
     }

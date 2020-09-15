@@ -14,7 +14,7 @@ namespace MVCMonsoon9PmBatch.Controllers
             return View("~/Views/Staff/GetMyView.cshtml");
         }
 
-        public ActionResult GetEmployee()
+        public ViewResult GetEmployee()
         {
 
             EmployeeModel empobj = new EmployeeModel();
@@ -58,7 +58,7 @@ namespace MVCMonsoon9PmBatch.Controllers
             return View();
         }
 
-        public ActionResult GetEmployeeByModel()
+        public ViewResult GetEmployeeByModel()
         {
 
             EmployeeModel empobj = new EmployeeModel();
@@ -68,7 +68,7 @@ namespace MVCMonsoon9PmBatch.Controllers
 
           
             //object model = empobj;
-            return View(empobj);
+            return View("GetEmployeeByModel", empobj);
         }
 
         public ActionResult GetAllEmployeeByModel()
@@ -147,18 +147,25 @@ namespace MVCMonsoon9PmBatch.Controllers
 
 
         [HttpGet]
-        public ActionResult SaveData()
+        public ViewResult SaveData()
         {
 
-            return View();
+            return View("SaveData");
         }
-        [HttpPost]
-        public ActionResult SaveData(string EmpName1 ,int EmpSalary1)
+    
+        public RedirectResult getURl()
         {
 
-            return View();
+            //return Redirect("http://www.google.com");
+            return Redirect("~/Employee/SaveData");
         }
 
+
+        public RedirectToRouteResult redirectMethod()
+        {
+            // return RedirectToAction("GetMyView","Staff",employeenmodeel);
+            return RedirectToRoute("Default1");
+        }
 
     }
 }

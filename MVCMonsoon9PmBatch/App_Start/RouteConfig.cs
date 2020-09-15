@@ -13,7 +13,11 @@ namespace MVCMonsoon9PmBatch
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-           
+            routes.MapRoute(
+                 name: "Default1",
+                 url: "pizza/burger",
+                 defaults: new { controller = "Staff", action = "GetMyView", EmpId = UrlParameter.Optional }
+             );
 
             routes.MapRoute(
                 name: "Default",

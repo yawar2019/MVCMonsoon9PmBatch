@@ -1,0 +1,9 @@
+﻿@model MVCMonsoon9PmBatch.Models.TestEmployeeModel
+@{
+    ViewBag.Title = "Test";
+}
+
+<h2>Test</h2>
+
+@Html.Partial("_EmployeePatial", Model.listemp)<br /><br />
+@Html.Partial("_DepartmentPartial", Model.listdept)

@@ -1,0 +1,11 @@
+﻿
+@model List <MVCMonsoon9PmBatch.Models.Department>
+<table>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@item.DeptId</td>
+        <td>@item.DeptName</td>
+    </tr>
+}
+</table>

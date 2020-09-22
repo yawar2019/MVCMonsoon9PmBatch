@@ -1,0 +1,23 @@
+﻿@model MVCMonsoon9PmBatch.Models.EmployeeModel
+@{
+    ViewBag.Title = "PartialViewExample";
+}
+
+<h2>PartialViewExample</h2>
+
+<h1>The Below are names of 9 pm batch Student</h1><br />
+
+@Html.Partial("_myPartialView", Model);
+
+
+  
+@{Html.RenderPartial("_myPartialView", Model); }
+
+
+@*1)Partial Method return MVCHTML String
+2)Render PArtial return Void
+3)Render partial method is faster
+4)Partial method slower*@ 
+  
+
+

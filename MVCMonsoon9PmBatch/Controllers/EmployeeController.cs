@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using MVCMonsoon9PmBatch.Models;
 namespace MVCMonsoon9PmBatch.Controllers
 {
+    [RoutePrefix("Santhosini")]
     public class EmployeeController : Controller
     {
         // GET: Employee
@@ -29,7 +30,7 @@ namespace MVCMonsoon9PmBatch.Controllers
         public ActionResult GetAllEmployee()
         {
             List<EmployeeModel> listobj = new List<EmployeeModel>();
-            
+
 
             EmployeeModel empobj = new EmployeeModel();
             empobj.EmpId = 1211;
@@ -52,7 +53,7 @@ namespace MVCMonsoon9PmBatch.Controllers
 
 
             ViewBag.EmpInfo = listobj;
-             
+
 
 
             return View();
@@ -66,7 +67,7 @@ namespace MVCMonsoon9PmBatch.Controllers
             empobj.EmpName = "John";
             empobj.EmpSalary = 908765;
 
-          
+
             //object model = empobj;
             return View("GetEmployeeByModel", empobj);
         }
@@ -147,12 +148,17 @@ namespace MVCMonsoon9PmBatch.Controllers
 
 
         [HttpGet]
+        [Route("Birthday/party")]
+        [Route("Engagement/party")]
+        [Route("TeachersDay/party")]
+        [Route("Friends/party")]
+
         public ViewResult SaveData()
         {
 
-            return View("SaveData");
+            return View();
         }
-    
+
         public RedirectResult getURl()
         {
 
@@ -165,6 +171,106 @@ namespace MVCMonsoon9PmBatch.Controllers
         {
             // return RedirectToAction("GetMyView","Staff",employeenmodeel);
             return RedirectToRoute("Default1");
+        }
+        public ViewResult PartialViewExample()
+        {
+
+            EmployeeModel empobj = new EmployeeModel();
+            empobj.EmpId = 1211;
+            empobj.EmpName = "John";
+            empobj.EmpSalary = 908765;
+
+            return View(empobj);
+        }
+        public ContentResult GetContent(int? id) {
+
+            if (id == 1)
+            {
+                return Content("Hello World");
+            }
+            else if (id == 2)
+            {
+                return Content("<p style=color:red>Hello World</p>");
+
+            }
+            else
+            {
+                return Content("<script>alert('Hello World');</script>");
+            }
+        }
+
+        public ActionResult Test() {
+            List<EmployeeModel> listemp = new List<EmployeeModel>();
+
+            EmployeeModel obj = new EmployeeModel();
+            obj.EmpId = 1;
+            obj.EmpName = "xyz";
+            obj.EmpSalary = 100;
+
+            EmployeeModel obj1 = new EmployeeModel();
+            obj1.EmpId =2;
+            obj1.EmpName = "abc";
+            obj1.EmpSalary = 200;
+
+            listemp.Add(obj);
+            listemp.Add(obj1);
+
+            List<Department> listdep = new List<Department>();
+
+            Department deptobj = new Department();
+            deptobj.DeptId =1211;
+            deptobj.DeptName ="IT";
+
+            Department deptobj1 = new Department();
+            deptobj1.DeptId = 1212;
+            deptobj1.DeptName = "Network";
+
+            listdep.Add(deptobj);
+            listdep.Add(deptobj1);
+
+            
+
+
+            TestEmployeeModel tobj = new Models.TestEmployeeModel();
+            tobj.listemp = listemp;
+            tobj.listdept = listdep;
+
+
+            return View(tobj);
+        }
+
+        public FileResult MyFile() {
+            return File("~/Web.config","application/xml");
+        }
+        public FileResult DownloadMyFile()
+        {
+            return File("~/Web.config", "application/xml","myFirstfile");
+        }
+
+        public JsonResult GetJonData() {
+
+            List<EmployeeModel> listobj = new List<EmployeeModel>();
+
+            EmployeeModel empobj = new EmployeeModel();
+            empobj.EmpId = 1211;
+            empobj.EmpName = "John";
+            empobj.EmpSalary = 908765;
+
+            EmployeeModel empobj1 = new EmployeeModel();
+            empobj1.EmpId = 1212;
+            empobj1.EmpName = "Michael";
+            empobj1.EmpSalary = 23423;
+
+            EmployeeModel empobj2 = new EmployeeModel();
+            empobj2.EmpId = 1213;
+            empobj2.EmpName = "Ross";
+            empobj2.EmpSalary = 73732;
+
+            listobj.Add(empobj);
+            listobj.Add(empobj1);
+            listobj.Add(empobj2);
+
+            return Json(listobj,JsonRequestBehavior.AllowGet);
         }
 
     }

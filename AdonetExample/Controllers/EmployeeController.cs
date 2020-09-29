@@ -23,8 +23,11 @@ namespace AdonetExample.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(EmployeeModel emp)
+        public ActionResult Create(FormCollection frm)
         {
+            EmployeeModel emp = new Models.EmployeeModel();
+            emp.EmpName = Convert.ToString(frm["EmpName"]);
+            emp.EmpSalary = Convert.ToInt32(frm["EmpSalary"]);
             int i = db.SaveEmployee(emp);
             if (i > 0)
             {
@@ -57,5 +60,37 @@ namespace AdonetExample.Controllers
                 return View();
             }
         }
+
+        [HttpGet]
+        public ActionResult Delete(int? id)
+        {
+            EmployeeModel emp = db.GetEmployeeById(id);
+            return View(emp);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        
+        public ActionResult DeleteConfirmed(int? id)
+        {
+            int i= db.DeleteEmployeeById(id);
+
+            if (i > 0)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            };
+        }
+        //[ActionName("Delete")]
+        //[HttpGet]
+        //public ActionResult Deleted(int id)
+        //{
+        //    EmployeeModel emp = db.GetEmployeeById(id);
+        //    return View(emp);
+        //}
+
     }
 }

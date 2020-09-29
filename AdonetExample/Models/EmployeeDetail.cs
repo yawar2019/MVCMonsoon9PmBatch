@@ -78,5 +78,18 @@ namespace AdonetExample.Models
             return i;
         }
 
+        public int DeleteEmployeeById(int ? id)
+        {
+            SqlCommand cmd = new SqlCommand("spr_deleteEmployeeDetails", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            con.Open();
+            cmd.Parameters.AddWithValue("@empid", id);
+            
+            int i = cmd.ExecuteNonQuery();
+            con.Close();
+            return i;
+        }
+        
+
     }
 }

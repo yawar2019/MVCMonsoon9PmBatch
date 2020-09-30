@@ -17,7 +17,22 @@ namespace DtbseFirstprcoh.Controllers
         // GET: employeeDetails
         public ActionResult Index()
         {
-            return View(db.employeeDetails.ToList());
+            List<EmployeeDetailExample> objlist = new List<Models.EmployeeDetailExample>();
+            var records = (from emp in db.employeeDetails
+                           join
+                             dept in db.Departments
+                             on emp.DeptId equals dept.DeptId
+                           select new EmployeeDetailExample
+                           {
+                               EmpId = emp.EmpId,
+                               EmpName = emp.EmpName,
+                               EmpSalary = emp.EmpSalary,
+                               DeptName = dept.DeptName
+                           });
+            ViewBag.data = records;
+           
+            return View();
+
         }
 
         // GET: employeeDetails/Details/5

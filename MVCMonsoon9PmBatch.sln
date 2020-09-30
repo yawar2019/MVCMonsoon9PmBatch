@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdonetExample", "AdonetExam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DtbseFirstprcoh", "DtbseFirstprcoh\DtbseFirstprcoh.csproj", "{B827B11D-2B70-4BAC-8FFB-FE2D579A334A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFirstApproach", "CodeFirstApproach\CodeFirstApproach.csproj", "{F85B8464-B38D-4D1F-B7C6-5334FF1B763F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B827B11D-2B70-4BAC-8FFB-FE2D579A334A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B827B11D-2B70-4BAC-8FFB-FE2D579A334A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B827B11D-2B70-4BAC-8FFB-FE2D579A334A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F85B8464-B38D-4D1F-B7C6-5334FF1B763F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F85B8464-B38D-4D1F-B7C6-5334FF1B763F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F85B8464-B38D-4D1F-B7C6-5334FF1B763F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F85B8464-B38D-4D1F-B7C6-5334FF1B763F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

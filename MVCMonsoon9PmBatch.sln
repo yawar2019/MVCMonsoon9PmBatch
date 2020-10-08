@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DtbseFirstprcoh", "DtbseFir
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFirstApproach", "CodeFirstApproach\CodeFirstApproach.csproj", "{F85B8464-B38D-4D1F-B7C6-5334FF1B763F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleOnMigration", "ExampleOnMigration\ExampleOnMigration.csproj", "{23956A88-04CE-4CB4-A760-B48DDBD69DD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthenticationExample", "AuthenticationExample\AuthenticationExample.csproj", "{70D69E44-C304-481C-A26D-645575BFB002}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{F85B8464-B38D-4D1F-B7C6-5334FF1B763F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F85B8464-B38D-4D1F-B7C6-5334FF1B763F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F85B8464-B38D-4D1F-B7C6-5334FF1B763F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23956A88-04CE-4CB4-A760-B48DDBD69DD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23956A88-04CE-4CB4-A760-B48DDBD69DD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23956A88-04CE-4CB4-A760-B48DDBD69DD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23956A88-04CE-4CB4-A760-B48DDBD69DD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70D69E44-C304-481C-A26D-645575BFB002}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70D69E44-C304-481C-A26D-645575BFB002}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70D69E44-C304-481C-A26D-645575BFB002}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70D69E44-C304-481C-A26D-645575BFB002}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

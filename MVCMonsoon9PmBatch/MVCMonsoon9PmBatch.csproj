@@ -169,6 +169,8 @@
     <Content Include="Views\Shared\_EmployeePatial.cshtml" />
     <Content Include="Views\Shared\_DepartmentPartial.cshtml" />
     <Content Include="Views\Employee\Test.cshtml" />
+    <Content Include="Views\Staff\GetMyView2.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

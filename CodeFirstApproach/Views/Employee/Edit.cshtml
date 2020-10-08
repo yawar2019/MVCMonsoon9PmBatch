@@ -1,0 +1,20 @@
+﻿@model CodeFirstApproach.Models.EmployeeModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(s => s.EmpId)
+    @Html.LabelFor(s => s.EmpName)
+    @Html.EditorFor(s => s.EmpName, new { htmlAttributes = new { @style = "background-color:skyblue", @class = "form-control" } })
+    <br />
+
+    @Html.LabelFor(s => s.EmpSalary)
+    @Html.EditorFor(s => s.EmpSalary, new { htmlAttributes = new { @style = "background-color:skyblue", @class = "form-control" } })
+    <br />
+    <input type="submit" value="Update" class="btn btn-success" />
+}

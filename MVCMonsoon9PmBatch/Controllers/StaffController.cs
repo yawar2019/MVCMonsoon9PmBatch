@@ -24,5 +24,20 @@ namespace MVCMonsoon9PmBatch.Controllers
             return View();//testing
 
         }
+
+        [HandleError]
+        public ActionResult GetMyView2(string id)
+        {
+            try
+            {
+                int a = Convert.ToInt32(id.ToString());
+                
+            }
+            catch (Exception ex) {
+                throw ex;
+
+            }
+            return View();
+        }
     }
 }

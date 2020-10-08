@@ -9,6 +9,7 @@
         <th>EmpId</th>
         <th>EmpName</th>
         <th>EmpSalary</th>
+        <th>Action</th>
     </tr>
 
 
@@ -18,6 +19,11 @@
             <td>@item.EmpId</td>
             <td>@item.EmpName</td>
             <td>@item.EmpSalary</td>
+            <td>
+                @Html.ActionLink("Edit","Edit",new {id=@item.EmpId})|
+                @Html.ActionLink("Delete", "Delete", new { id = @item.EmpId })
+            </td>
+             
         </tr>
        
     }

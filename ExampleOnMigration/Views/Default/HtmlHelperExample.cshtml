@@ -1,0 +1,33 @@
+﻿@model ExampleOnMigration.Models.EmployeeModel
+@{
+    ViewBag.Title = "HtmlHelperExample";
+}
+
+<script>
+    function fun() {
+        alert('hello');
+    }
+</script>
+<h2>HtmlHelperExample</h2>
+
+@Html.TextBox("EmpName","Radha",new {@class="form-control", @style = "background-color:darkorange;", onclick = "fun()" })
+
+ @Html.TextBoxFor(s=>s.Designation, new { @class = "form-control", @style = "background-color:darkorange;", onclick = "fun()" }) 
+
+<br />
+<span>Gender</span>
+<span>Male</span>@Html.RadioButton("Gender", "Male")
+<span>Female</span>@Html.RadioButton("Gender", "Female",true)
+<span>Other</span>@Html.RadioButton("Gender", "Other")<br />
+
+@Html.DropDownList("Country",
+    new List<SelectListItem>()
+{
+    new SelectListItem {Text="Select Contry",Value="-1",Disabled=true,Selected=true},
+    new SelectListItem {Text="India",Value="1"},
+    new SelectListItem {Text="Srilanka",Value="2"},
+    new SelectListItem {Text="China",Value="3"}
+
+}
+    
+    )

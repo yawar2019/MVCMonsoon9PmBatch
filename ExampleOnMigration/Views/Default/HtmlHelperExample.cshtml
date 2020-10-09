@@ -1,4 +1,5 @@
 ﻿@model ExampleOnMigration.Models.EmployeeModel
+@using ExampleOnMigration.UserControl
 @{
     ViewBag.Title = "HtmlHelperExample";
 }
@@ -31,3 +32,20 @@
 }
     
     )
+
+@Html.DropDownList("5","select Department")
+@Html.DropDownList("Department2",(IEnumerable<SelectListItem>)ViewBag.Department,"Select Department")
+
+
+@myhtmlhelper.MyLabel("EmpName")<br />
+@Html.createUrControl("text")<br />
+@Html.createUrControl("checkbox")<br />
+@Html.createUrControl("radio")<br />
+@Html.createUrControl("file")<br />
+
+
+@helper labelbyrazzorcode(string content)
+{
+    <label>@content</label>
+}
+@labelbyrazzorcode("hi this is ali")

@@ -70,10 +70,10 @@ namespace AdonetExample.Controllers
 
         [HttpPost]
         [ActionName("Delete")]
-        
+
         public ActionResult DeleteConfirmed(int? id)
         {
-            int i= db.DeleteEmployeeById(id);
+            int i = db.DeleteEmployeeById(id);
 
             if (i > 0)
             {
@@ -92,5 +92,25 @@ namespace AdonetExample.Controllers
         //    return View(emp);
         //}
 
+        public ActionResult ValidationEample()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ValidationEample(ValidationModel vmd)
+        {
+            if (ModelState.IsValid)
+            {
+              
+                return Redirect("~/Employee/ValidationEample");
+            }
+            else
+            {
+                return View(vmd);
+            }
+           
+        }
     }
 }

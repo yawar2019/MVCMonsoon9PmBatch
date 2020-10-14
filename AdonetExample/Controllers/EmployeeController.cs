@@ -4,8 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AdonetExample.Models;
+using AdonetExample.Filter;
 namespace AdonetExample.Controllers
 {
+
+    
     public class EmployeeController : Controller
     {
         // GET: Employee
@@ -98,19 +101,24 @@ namespace AdonetExample.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult ValidationEample(ValidationModel vmd)
-        {
-            if (ModelState.IsValid)
-            {
-              
-                return Redirect("~/Employee/ValidationEample");
-            }
-            else
-            {
-                return View(vmd);
-            }
-           
+        //[HttpPost]
+        //public ActionResult ValidationEample(ValidationModel vmd)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+
+        //        return Redirect("~/Employee/ValidationEample");
+        //    }
+        //    else
+        //    {
+        //        return View(vmd);
+        //    }
+
+        //}
+        [MyFilter]
+        public ActionResult ExampleFilter() {
+            ViewBag.Player = "Mahendra Bahubali";
+            return View();
         }
     }
 }
